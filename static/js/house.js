@@ -22,7 +22,7 @@
 
      jQuery.ajax({
          type: "POST",
-         url: "https://charles-me-project.herokuapp.com/api_get_house/",
+         url: "https://charles-house-api.df.r.appspot.com/api_get_house/",
          data: {
              "city_name": city_name,
              "low_price": low_price,
