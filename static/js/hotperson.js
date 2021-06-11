@@ -17,7 +17,7 @@ function call_ajax() {
 
     $.ajax({
         type: "POST",
-        url: "https://charles-newsanalysis-api.df.r.appspot.com/api_get_hotPerson/",
+        url: "https://charles-newsanalysis-api.df.r.appspot.com/hotperson/api_get_hotPerson/",
         //url: "api_get_hotPerson/",
         data: {
             "news_category": cate,
