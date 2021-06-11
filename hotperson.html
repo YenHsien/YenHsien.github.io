@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>輿情分析系統</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   
+</head>
+
+<body>
+    {%include 'navbar.html'%}
+    <div class="container">
+        <div class="row">
+
+
+            <!-- Here insert the navigation bar -->
+            
+
+            <div class="col-lg-12">
+
+                <h1>熱門人物</h1>
+                <p>哪個人物被報導最多次?</p>
+            </div>
+
+            <!-- column col-lg-6 card -->
+            <div class="col-lg-6 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h6 text-uppercase mb-0">篩選條件(資料週期:資料截止時間的前4周)</h3>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">新聞類別</label>
+                            <div class="col-md-9">
+                                <label class="radio-inline"><input type="radio" value="全部" name="cateradio"
+                                        checked>全部</label>
+                                <label class="radio-inline"><input type="radio" value="重點新聞" name="cateradio">重點新聞</label>
+                                
+                                <label class="radio-inline"><input type="radio" value="政治" name="cateradio">政治</label>
+                                <label class="radio-inline"><input type="radio" value="科技與汽車" name="cateradio">科技與汽車</label>
+                                <label class="radio-inline"><input type="radio" value="娛樂" name="cateradio">娛樂</label>
+                    
+                                <label class="radio-inline"><input type="radio" value="運動" name="cateradio">運動</label>
+                                <label class="radio-inline"><input type="radio" value="生活" name="cateradio">生活</label>
+                                <label class="radio-inline"><input type="radio" value="財經" name="cateradio">財經</label>
+                                <label class="radio-inline"><input type="radio" value="地方" name="cateradio">地方</label>
+                                <label class="radio-inline"><input type="radio" value="國際" name="cateradio">國際</label>
+                                <label class="radio-inline"><input type="radio" value="社會" name="cateradio">社會</label>
+                                <label class="radio-inline"><input type="radio" value="文化" name="cateradio">文化</label>
+                                <label class="radio-inline"><input type="radio" value="軍事" name="cateradio">軍事</label>
+                                <label class="radio-inline"><input type="radio" value="寵物" name="cateradio">寵物</label>
+                                <label class="radio-inline"><input type="radio" value="新奇" name="cateradio">新奇</label>
+                                <label class="radio-inline"><input type="radio" value="其他" name="cateradio">其他</label>
+                                <small class="form-text text-muted">新聞類別內定值為"全部"新聞</small>
+                            </div>
+
+                        </div>
+                        <!--form group-->
+
+
+                        <!-- Number of persons form group -->
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label">多少個熱門詞?</label>
+                            <div class="col-md-9">
+                                <label class="radio-inline"><input type="radio" value="5" name="topkradio">5</label>
+                                <label class="radio-inline"><input type="radio" value="10" name="topkradio"
+                                        checked>10</label>
+                                <label class="radio-inline"><input type="radio" value="20" name="topkradio">20</label>
+                                <label class="radio-inline"><input type="radio" value="30" name="topkradio">30</label>
+                                <label class="radio-inline"><input type="radio" value="40" name="topkradio">40</label>
+                                <label class="radio-inline"><input type="radio" value="50" name="topkradio">50</label>
+                                <label class="radio-inline"><input type="radio" value="60" name="topkradio">60</label>
+                                <small class="form-text text-muted">內定值為10</small>
+                            </div>
+                        </div>
+                        <!--form group-->
+
+                    </div>
+                    <!--card body-->
+                </div>
+                <!--card -->
+            </div><!-- column -->
+
+
+            <!-- 繪圖區塊-->
+            <div class="col-lg-6 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h6 text-uppercase mb-0">熱門關鍵字繪圖</h3>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="mychart"></canvas>
+                    </div>
+                </div>
+            </div><!-- column -->
+
+
+            <!-- 熱門關鍵字區塊-->
+            <div class="col-lg-6 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h6 text-uppercase mb-0">熱門關鍵字(頻率次數)</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <ul id="topkeys"></ul>
+
+                    </div>
+                </div>
+            </div><!-- column -->
+
+
+        </div> <!-- row -->
+    </div> <!-- container -->
+    {%include 'footer.html'%}
+</body>
+
+</html>
+
+
+<!-- jQuery js-->
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<!-- chartjs js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="/static/js/hotperson.js"></script>
