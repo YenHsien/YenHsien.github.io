@@ -25,7 +25,7 @@ function callAjax() {
 
     $.ajax({
         type: "POST",
-        url: "https://charles-newsanalysis-api.df.r.appspot.com/topword/api_get_cate_topword/",
+        url: "https://charles-newsanalysis-api.df.r.appspot.com/hotkeyword/api_get_cate_topword/",
         //url: "api_get_cate_topword/",
         data: {
             "news_category": cate,

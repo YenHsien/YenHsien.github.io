@@ -16,16 +16,15 @@
     <link rel="stylesheet" href="static/css/Footer-Basic.css">
     <link rel="stylesheet" href="static/css/styles.css">
     <script src="static/bootstrap/js/bootstrap.min.js"></script>
-    
-  
+
+
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"
-                style="font-weight: bold;font-size: 16px;">
+            <a class="navbar-brand" href="index.html" style="font-weight: bold;font-size: 16px;">
                 <i class="fa fa-user-circle-o"></i>&nbsp;簡延銜
             </a>
             <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
@@ -44,14 +43,14 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="about.html">
                             <i class="fa fa-id-card-o"></i> 關於我</a></li>
-            
+
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container">
         <div class="row">
-             
+
             <div class="col-lg-12">
                 <h1>熱門人物產品等命名實體分析</h1>
                 <p>哪個人物產品等被報導最多次?</p>
@@ -86,18 +85,24 @@
                             <label class="col-sm-3 form-control-label">新聞類別</label>
                             <div class="col-md-9 mb-3">
                                 <label class="radio-inline"><input type="radio" value="0" name="cateradio"
-                                        checked>政治</label>
-                                <label class="radio-inline"><input type="radio" value="1" name="cateradio">科技</label>
-                                <label class="radio-inline"><input type="radio" value="2" name="cateradio">運動</label>
-                                <label class="radio-inline"><input type="radio" value="3" name="cateradio">證卷</label>
-                                <label class="radio-inline"><input type="radio" value="4" name="cateradio">產經</label>
-                                <label class="radio-inline"><input type="radio" value="5" name="cateradio">娛樂</label>
+                                        checked>全部</label>
+                                <label class="radio-inline"><input type="radio" value="1" name="cateradio">重點新聞</label>
+
+                                <label class="radio-inline"><input type="radio" value="2" name="cateradio">政治</label>
+                                <label class="radio-inline"><input type="radio" value="3" name="cateradio">科技與汽車</label>
+                                <label class="radio-inline"><input type="radio" value="4" name="cateradio">娛樂</label>
+
+                                <label class="radio-inline"><input type="radio" value="5" name="cateradio">運動</label>
                                 <label class="radio-inline"><input type="radio" value="6" name="cateradio">生活</label>
-                                <label class="radio-inline"><input type="radio" value="7" name="cateradio">國際</label>
-                                <label class="radio-inline"><input type="radio" value="8" name="cateradio">社會</label>
-                                <label class="radio-inline"><input type="radio" value="9" name="cateradio">文化</label>
-                                <label class="radio-inline"><input type="radio" value="10" name="cateradio">兩岸</label>
-                                <label class="radio-inline"><input type="radio" value="11" name="cateradio">全部</label>
+                                <label class="radio-inline"><input type="radio" value="7" name="cateradio">財經</label>
+                                <label class="radio-inline"><input type="radio" value="8" name="cateradio">地方</label>
+                                <label class="radio-inline"><input type="radio" value="9" name="cateradio">國際</label>
+                                <label class="radio-inline"><input type="radio" value="10" name="cateradio">社會</label>
+                                <label class="radio-inline"><input type="radio" value="11" name="cateradio">文化</label>
+                                <label class="radio-inline"><input type="radio" value="12" name="cateradio">軍事</label>
+                                <label class="radio-inline"><input type="radio" value="13" name="cateradio">寵物</label>
+                                <label class="radio-inline"><input type="radio" value="14" name="cateradio">新奇</label>
+                                <label class="radio-inline"><input type="radio" value="15" name="cateradio">其他</label>
                                 <small class="form-text text-muted ml-3">請選擇新聞類別
                                 </small>
                             </div>
@@ -164,8 +169,8 @@
 <!-- jQuery js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
- 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
 <script src="https://cdn.rawgit.com/jasondavies/d3-cloud/v1.2.1/build/d3.layout.cloud.js"></script>
- 
+
 <script src="/static/js/ner_hotkeyword.js"></script>
