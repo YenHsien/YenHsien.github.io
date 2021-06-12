@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>輿情分析平台</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    
+  
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"
+                style="font-weight: bold;font-size: 16px;">
+                <i class="fa fa-user-circle-o"></i>&nbsp;簡延銜
+            </a>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                <span class="visually-hidden">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navcol-1" style="font-weight: bold;">
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item"><a class="nav-link" href="hotkeyword.html">熱門關鍵字</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hotperson.html">熱門人物</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ner_hotkeyword.html">主題熱門關鍵字</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">新聞輿情分析</a></li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="about.html">
+                            <i class="fa fa-id-card-o"></i> 關於我</a></li>
+            
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+             
+            <div class="col-lg-12">
+                <h1>熱門人物產品等命名實體分析</h1>
+                <p>哪個人物產品等被報導最多次?</p>
+            </div>
+            <!-- query criteria col-lg-6  card -->
+            <div class="col-lg-6 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h6 text-uppercase mb-0">篩選條件(資料週期:資料截止時間的前4周)</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- NE names -->
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">實體標記名稱</label>
+                            <div class="col-md-9 select mb-3">
+                                <label class="radio-inline"><input type="radio" value="8" name="nerradio"
+                                        checked>人名</label>
+                                <label class="radio-inline"><input type="radio" value="9" name="nerradio">產品</label>
+                                <label class="radio-inline"><input type="radio" value="4" name="nerradio">法律條文</label>
+                                <label class="radio-inline"><input type="radio" value="0" name="nerradio">事件</label>
+                                <label class="radio-inline"><input type="radio" value="7" name="nerradio">組織</label>
+                                <label class="radio-inline"><input type="radio" value="10" name="nerradio">作品</label>
+                                <label class="radio-inline"><input type="radio" value="5" name="nerradio">地理區</label>
+                                <label class="radio-inline"><input type="radio" value="3" name="nerradio">語言</label>
+                                <small class="form-text text-muted ml-3">請選擇詞類型
+                                </small>
+                            </div>
+                        </div>
+                        <!--form group-->
+                        <!-- new category form group-->
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">新聞類別</label>
+                            <div class="col-md-9 mb-3">
+                                <label class="radio-inline"><input type="radio" value="0" name="cateradio"
+                                        checked>政治</label>
+                                <label class="radio-inline"><input type="radio" value="1" name="cateradio">科技</label>
+                                <label class="radio-inline"><input type="radio" value="2" name="cateradio">運動</label>
+                                <label class="radio-inline"><input type="radio" value="3" name="cateradio">證卷</label>
+                                <label class="radio-inline"><input type="radio" value="4" name="cateradio">產經</label>
+                                <label class="radio-inline"><input type="radio" value="5" name="cateradio">娛樂</label>
+                                <label class="radio-inline"><input type="radio" value="6" name="cateradio">生活</label>
+                                <label class="radio-inline"><input type="radio" value="7" name="cateradio">國際</label>
+                                <label class="radio-inline"><input type="radio" value="8" name="cateradio">社會</label>
+                                <label class="radio-inline"><input type="radio" value="9" name="cateradio">文化</label>
+                                <label class="radio-inline"><input type="radio" value="10" name="cateradio">兩岸</label>
+                                <label class="radio-inline"><input type="radio" value="11" name="cateradio">全部</label>
+                                <small class="form-text text-muted ml-3">請選擇新聞類別
+                                </small>
+                            </div>
+                        </div>
+                        <!-- Select number of words -->
+                        <div class="form-group row">
+                            <label class="col-md-3 form-control-label">多少個熱門詞?</label>
+                            <div class="col-md-9">
+                                <input id="topk_keys" name="topk" value="30" class="form-control form-control-success">
+                                <small class="form-text text-muted ml-3">內定值為30
+                                </small>
+                            </div>
+                        </div>
+                        <!-- submit -->
+                        <div class="form-group row">
+                            <div class="col-md-9 ml-auto">
+                                <button type="button" id="btn_ok" class="btn btn-primary">查詢</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--card body -->
+                </div> <!-- card -->
+            </div> <!-- column -->
+            <!-- draw cloud chart -->
+            <div class="col-lg-6 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h6 text-uppercase mb-0">熱門關鍵字雲圖</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="cloud"></div>
+                    </div>
+                </div>
+            </div><!-- column -->
+            <!-- draw chart -->
+            <div class="col-lg-6 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h6 text-uppercase mb-0">熱門關鍵字繪圖</h3>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="mychart"></canvas>
+                    </div>
+                </div>
+            </div><!-- column -->
+            <!-- display top words  -->
+            <div class="col-lg-6 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h6 text-uppercase mb-0">熱門關鍵字</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="topkeys"></ul>
+                    </div>
+                </div>
+            </div><!-- column -->
+        </div> <!-- row -->
+    </div> <!-- container -->
+
+    {%include 'footer.html'%}
+</body>
+
+</html>
+<!-- jQuery js-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+<script src="https://cdn.rawgit.com/jasondavies/d3-cloud/v1.2.1/build/d3.layout.cloud.js"></script>
+ 
+<script src="/static/js/ner_hotkeyword.js"></script>
